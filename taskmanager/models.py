@@ -15,7 +15,7 @@ class Category(db.Model):
     # all related tasks and delete them.
     # The last parameter here is lazy=True, which means that when we query the database for
     # categories, it can simultaneously identify any task linked to the categories.
-    tasks = db.relationship("Tasks", backref="category", cascade="all, delete", lazy=True)
+    tasks = db.relationship("Task", backref="category", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string, another
